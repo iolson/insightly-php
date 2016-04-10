@@ -46,9 +46,7 @@ class Handler
         $statusCode = $response->getStatusCode();
         $message = $response->getReasonPhrase();
 
-        $this->handleException(
-            $message, $statusCode
-        );
+        $this->handleException($message, $statusCode);
     }
 
     /**
