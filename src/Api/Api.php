@@ -162,7 +162,7 @@ class Api implements ApiInterface
     /**
      * {@inheritdoc}
      */
-    public function _get($url = null, $parameters = [])
+    public function getRequest($url = null, $parameters = [])
     {
         return $this->execute('get', $url, $parameters);
     }
@@ -170,7 +170,7 @@ class Api implements ApiInterface
     /**
      * {@inheritdoc}
      */
-    public function _head($url = null, array $parameters = [])
+    public function headRequest($url = null, array $parameters = [])
     {
         return $this->execute('head', $url, $parameters);
     }
@@ -178,7 +178,7 @@ class Api implements ApiInterface
     /**
      * {@inheritdoc}
      */
-    public function _delete($url = null, array $parameters = [])
+    public function deleteRequest($url = null, array $parameters = [])
     {
         return $this->execute('delete', $url, $parameters);
     }
@@ -186,7 +186,7 @@ class Api implements ApiInterface
     /**
      * {@inheritdoc}
      */
-    public function _put($url = null, array $parameters = [])
+    public function putRequest($url = null, array $parameters = [])
     {
         return $this->execute('put', $url, $parameters);
     }
@@ -194,7 +194,7 @@ class Api implements ApiInterface
     /**
      * {@inheritdoc}
      */
-    public function _patch($url = null, array $parameters = [])
+    public function patchRequest($url = null, array $parameters = [])
     {
         return $this->execute('patch', $url, $parameters);
     }
@@ -202,7 +202,7 @@ class Api implements ApiInterface
     /**
      * {@inheritdoc}
      */
-    public function _post($url = null, array $parameters = [])
+    public function postRequest($url = null, array $parameters = [])
     {
         return $this->execute('post', $url, $parameters);
     }
@@ -210,7 +210,7 @@ class Api implements ApiInterface
     /**
      * {@inheritdoc}
      */
-    public function _options($url = null, array $parameters = [])
+    public function optionsRequest($url = null, array $parameters = [])
     {
         return $this->execute('options', $url, $parameters);
     }

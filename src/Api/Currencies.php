@@ -11,6 +11,6 @@ class Currencies extends Api
      */
     public function all()
     {
-        return $this->_get("Currencies");
+        return $this->getRequest("Currencies");
     }
 }

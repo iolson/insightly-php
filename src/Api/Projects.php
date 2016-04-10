@@ -15,7 +15,7 @@ class Projects extends Api
      */
     public function create(array $parameters = [])
     {
-        return $this->_post("Projects", $parameters);
+        return $this->postRequest("Projects", $parameters);
     }
 
     /**
@@ -27,7 +27,7 @@ class Projects extends Api
      */
     public function find($projectId)
     {
-        return $this->_get("Projects/{$projectId}");
+        return $this->getRequest("Projects/{$projectId}");
     }
 
     /**
@@ -42,7 +42,7 @@ class Projects extends Api
     {
         $parameters = Arr::add($parameters, 'CONTACT_ID', $projectId);
 
-        return $this->_put("Projects", $parameters);
+        return $this->putRequest("Projects", $parameters);
     }
 
     /**
@@ -54,7 +54,7 @@ class Projects extends Api
      */
     public function delete($projectId)
     {
-        $this->_delete("Projects/{$projectId}");
+        $this->deleteRequest("Projects/{$projectId}");
 
         return;
     }
@@ -70,7 +70,7 @@ class Projects extends Api
     {
         $this->setFilters(['ids', 'tag']);
 
-        return $this->_get("Projects", Arr::only($parameters, $this->getFilters()));
+        return $this->getRequest("Projects", Arr::only($parameters, $this->getFilters()));
     }
 
     /**
@@ -82,7 +82,7 @@ class Projects extends Api
      */
     public function emails($projectId)
     {
-        return $this->_get("Projects/{$projectId}/Emails");
+        return $this->getRequest("Projects/{$projectId}/Emails");
     }
 
     /**
@@ -94,7 +94,7 @@ class Projects extends Api
      */
     public function notes($projectId)
     {
-        return $this->_get("Projects/{$projectId}/Notes");
+        return $this->getRequest("Projects/{$projectId}/Notes");
     }
 
     /**
@@ -106,7 +106,7 @@ class Projects extends Api
      */
     public function tasks($projectId)
     {
-        return $this->_get("Projects/{$projectId}/Tasks");
+        return $this->getRequest("Projects/{$projectId}/Tasks");
     }
 
     /**
@@ -118,6 +118,6 @@ class Projects extends Api
      */
     public function image($projectId)
     {
-        return $this->_get("Projects/{$projectId}/Image");
+        return $this->getRequest("Projects/{$projectId}/Image");
     }
 }

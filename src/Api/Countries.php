@@ -11,6 +11,6 @@ class Countries extends Api
      */
     public function all()
     {
-        return $this->_get("Countries");
+        return $this->getRequest("Countries");
     }
 }

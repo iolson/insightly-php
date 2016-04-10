@@ -19,7 +19,7 @@ interface ApiInterface
      *
      * @return array
      */
-    public function _get($url = null, $parameters = []);
+    public function getRequest($url = null, $parameters = []);
 
     /**
      * Send an HEAD request.
@@ -29,7 +29,7 @@ interface ApiInterface
      *
      * @return array
      */
-    public function _head($url = null, array $parameters = []);
+    public function headRequest($url = null, array $parameters = []);
 
     /**
      * Send an DELETE request.
@@ -39,7 +39,7 @@ interface ApiInterface
      *
      * @return array
      */
-    public function _delete($url = null, array $parameters = []);
+    public function deleteRequest($url = null, array $parameters = []);
 
     /**
      * Send an PUT request.
@@ -49,7 +49,7 @@ interface ApiInterface
      *
      * @return array
      */
-    public function _put($url = null, array $parameters = []);
+    public function putRequest($url = null, array $parameters = []);
 
     /**
      * Send an PATCH request.
@@ -59,7 +59,7 @@ interface ApiInterface
      *
      * @return array
      */
-    public function _patch($url = null, array $parameters = []);
+    public function patchRequest($url = null, array $parameters = []);
 
     /**
      * Send an POST request.
@@ -69,7 +69,7 @@ interface ApiInterface
      *
      * @return array
      */
-    public function _post($url = null, array $parameters = []);
+    public function postRequest($url = null, array $parameters = []);
 
     /**
      * Send an OPTIONS request.
@@ -79,7 +79,7 @@ interface ApiInterface
      *
      * @return array
      */
-    public function _options($url = null, array $parameters = []);
+    public function optionsRequest($url = null, array $parameters = []);
 
     /**
      * Executes the HTTP request.

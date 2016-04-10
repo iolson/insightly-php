@@ -15,7 +15,7 @@ class Contacts extends Api
      */
     public function create(array $parameters = [])
     {
-        return $this->_post("Contacts", $parameters);
+        return $this->postRequest("Contacts", $parameters);
     }
 
     /**
@@ -27,7 +27,7 @@ class Contacts extends Api
      */
     public function find($contactId)
     {
-        return $this->_get("Contacts/{$contactId}");
+        return $this->getRequest("Contacts/{$contactId}");
     }
 
     /**
@@ -42,7 +42,7 @@ class Contacts extends Api
     {
         $parameters = Arr::add($parameters, 'CONTACT_ID', $contactId);
 
-        return $this->_put("Contacts", $parameters);
+        return $this->putRequest("Contacts", $parameters);
     }
 
     /**
@@ -54,7 +54,7 @@ class Contacts extends Api
      */
     public function delete($contactId)
     {
-        $this->_delete("Contacts/{$contactId}");
+        $this->deleteRequest("Contacts/{$contactId}");
 
         return;
     }
@@ -70,7 +70,7 @@ class Contacts extends Api
     {
         $this->setFilters(['ids', 'email', 'tag']);
 
-        return $this->_get("Contacts", Arr::only($parameters, $this->getFilters()));
+        return $this->getRequest("Contacts", Arr::only($parameters, $this->getFilters()));
     }
 
     /**
@@ -82,7 +82,7 @@ class Contacts extends Api
      */
     public function emails($contactId)
     {
-        return $this->_get("Contacts/{$contactId}/Emails");
+        return $this->getRequest("Contacts/{$contactId}/Emails");
     }
 
     /**
@@ -94,7 +94,7 @@ class Contacts extends Api
      */
     public function notes($contactId)
     {
-        return $this->_get("Contacts/{$contactId}/Notes");
+        return $this->getRequest("Contacts/{$contactId}/Notes");
     }
 
     /**
@@ -106,7 +106,7 @@ class Contacts extends Api
      */
     public function tasks($contactId)
     {
-        return $this->_get("Contacts/{$contactId}/Tasks");
+        return $this->getRequest("Contacts/{$contactId}/Tasks");
     }
 
     /**
@@ -118,6 +118,6 @@ class Contacts extends Api
      */
     public function image($contactId)
     {
-        return $this->_get("Contacts/{$contactId}/Image");
+        return $this->getRequest("Contacts/{$contactId}/Image");
     }
 }
