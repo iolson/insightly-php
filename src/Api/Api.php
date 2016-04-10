@@ -225,7 +225,6 @@ class Api implements ApiInterface
         }
 
         try {
-
             $response = $this->getClient()->{$httpMethod}("/{$this->getConfig()->getApiVersion()}/{$url}", [
                 $this->getRequestType() => $parameters
             ]);
