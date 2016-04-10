@@ -58,4 +58,65 @@ class ContactsTest extends FunctionalTestCase
         $this->assertSame($FIRST_NAME, Arr::get($contact, 'FIRST_NAME'));
         $this->assertSame($LAST_NAME, Arr::get($contact, 'LAST_NAME'));
     }
+
+    /**
+     * @test
+     *
+     * @expectedException \IanOlson\Insightly\Exception\NotFoundException
+     */
+    public function it_will_throw_an_exception_when_searching_for_a_non_existing_contact()
+    {
+        $this->client->contacts()->find(time());
+    }
+
+    /**
+     * @test
+     */
+    public function it_can_update_an_existing_contact()
+    {
+        $FIRST_NAME = $this->faker->firstName;
+        $LAST_NAME = $this->faker->lastName;
+        $ORIGINAL_FIRST_NAME = $FIRST_NAME;
+        $ORIGINAL_LAST_NAME = $LAST_NAME;
+
+        $contact = $this->client->contacts()->create(compact('FIRST_NAME', 'LAST_NAME'));
+
+        $this->contactId = Arr::get($contact, 'CONTACT_ID');
+
+        $FIRST_NAME = $this->faker->firstName;
+        $LAST_NAME = $this->faker->lastName;
+
+        $contact = $this->client->contacts()->update($this->contactId, compact('FIRST_NAME', 'LAST_NAME'));
+
+        $this->assertSame($FIRST_NAME, Arr::get($contact, 'FIRST_NAME'));
+        $this->assertSame($LAST_NAME, Arr::get($contact, 'LAST_NAME'));
+        $this->assertNotEquals($ORIGINAL_FIRST_NAME, Arr::get($contact, 'FIRST_NAME'));
+        $this->assertNotEquals($ORIGINAL_LAST_NAME, Arr::get($contact, 'LAST_NAME'));
+    }
+
+    /**
+     * @test
+     */
+    public function it_can_delete_an_existing_contact()
+    {
+        $FIRST_NAME = $this->faker->firstName;
+        $LAST_NAME = $this->faker->lastName;
+
+        $contact = $this->client->contacts()->create(compact('FIRST_NAME', 'LAST_NAME'));
+
+        $contact = $this->client->contacts()->delete(Arr::get($contact, 'CONTACT_ID'));
+
+        $this->assertNull($contact);
+    }
+
+    /**
+     * @test
+     */
+    public function it_can_retrieve_all_contacts()
+    {
+        $contacts = $this->client->contacts()->all();
+
+        $this->assertNotEmpty($contacts);
+        $this->assertInternalType('array', $contacts);
+    }
 }
