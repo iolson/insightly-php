@@ -1,11 +1,12 @@
 # Insightly CRM PHP Client
 
-[![Latest Version](https://img.shields.io/github/release/iolson/insightly-php.svg?style=flat-square)](https://github.com/iolson/insightly-php/releases)
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Build Status](https://img.shields.io/travis/iolson/insightly-php/master.svg?style=flat-square)](https://travis-ci.org/iolson/insightly-php)
-[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/iolson/insightly-php.svg?style=flat-square)](https://scrutinizer-ci.com/g/iolson/insightly-php/)
-[![Quality Score](https://img.shields.io/scrutinizer/g/iolson/insightly-php.svg?style=flat-square)](https://scrutinizer-ci.com/g/iolson/insightly-php)
-[![Total Downloads](https://img.shields.io/packagist/dt/iolson/insightly-php.svg?style=flat-square)](https://packagist.org/packages/iolson/insightly-php)
+[![Latest Version](https://img.shields.io/github/release/iolson/insightly-php.svg)](https://github.com/iolson/insightly-php/releases)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE.md)
+[![Build Status](https://img.shields.io/travis/iolson/insightly-php/master.svg)](https://travis-ci.org/iolson/insightly-php)
+[![SensioLabs Insight](https://img.shields.io/sensiolabs/i/b8ee47a2-d70c-4bf6-bae9-e0adbfdca4bd.svg?maxAge=2592000)](https://insight.sensiolabs.com/projects/b8ee47a2-d70c-4bf6-bae9-e0adbfdca4bd)
+[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/iolson/insightly-php.svg)](https://scrutinizer-ci.com/g/iolson/insightly-php/)
+[![Quality Score](https://img.shields.io/scrutinizer/g/iolson/insightly-php.svg)](https://scrutinizer-ci.com/g/iolson/insightly-php)
+[![Total Downloads](https://img.shields.io/packagist/dt/iolson/insightly-php.svg)](https://packagist.org/packages/iolson/insightly-php)
 
 A comprehensive PHP library for [Insightly CRM](https://www.insightly.com)
 
