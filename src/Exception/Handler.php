@@ -17,7 +17,7 @@ class Handler
         // Often missing a required parameter
         400 => 'BadRequest',
 
-        // Invalid Stripe API key provided
+        // Invalid Insightly API key provided
         401 => 'Unauthorized',
 
         // Parameters were valid but request failed
@@ -26,7 +26,7 @@ class Handler
         // The requested item doesn't exist
         404 => 'NotFound',
 
-        // Something went wrong on Stripe's end
+        // Something went wrong on Insightly's end
         500 => 'ServerError',
         502 => 'ServerError',
         503 => 'ServerError',

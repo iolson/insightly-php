@@ -44,7 +44,7 @@ class Config implements ConfigInterface
 
         $this->setApiVersion($apiVersion ?: getenv('INSIGHTLY_API_VERSION') ?: 'v2.1');
 
-        if (! $this->apiKey) {
+        if (! $this->getApiKey()) {
             throw new RuntimeException('The Insightly API key is not defined!');
         }
     }

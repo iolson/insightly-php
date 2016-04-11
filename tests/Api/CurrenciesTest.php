@@ -8,6 +8,8 @@ class CurrenciesTest extends FunctionalTestCase
 {
     /**
      * @test
+     *
+     * @group integration
      */
     public function it_can_retrieve_all_contacts()
     {

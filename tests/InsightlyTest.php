@@ -3,6 +3,8 @@
 namespace IanOlson\Insightly\Tests;
 
 use BadMethodCallException;
+use IanOlson\Insightly\Config;
+use IanOlson\Insightly\ConfigInterface;
 use IanOlson\Insightly\Insightly;
 use Mockery as m;
 use PHPUnit_Framework_TestCase;
@@ -96,6 +98,17 @@ class InsightlyTest extends PHPUnit_Framework_TestCase
     public function it_can_get_the_current_package_version()
     {
         $this->insightly->getVersion();
+    }
+
+    /**
+     * @test
+     */
+    public function it_can_get_and_set_the_config_instance()
+    {
+        $config = new Config(Insightly::VERSION, 'insightly-api-key', null);
+        $this->insightly->setConfig($config);
+
+        $this->assertInstanceOf(ConfigInterface::class, $this->insightly->getConfig());
     }
 
     /**

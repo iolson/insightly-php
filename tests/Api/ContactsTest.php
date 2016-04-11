@@ -27,6 +27,8 @@ class ContactsTest extends FunctionalTestCase
 
     /**
      * @test
+     *
+     * @group integration
      */
     public function it_can_create_a_new_contact()
     {
@@ -43,6 +45,8 @@ class ContactsTest extends FunctionalTestCase
 
     /**
      * @test
+     *
+     * @group integration
      */
     public function it_can_find_an_existing_contact()
     {
@@ -62,6 +66,8 @@ class ContactsTest extends FunctionalTestCase
     /**
      * @test
      *
+     * @group integration
+     *
      * @expectedException \IanOlson\Insightly\Exception\NotFoundException
      */
     public function it_will_throw_an_exception_when_searching_for_a_non_existing_contact()
@@ -71,6 +77,8 @@ class ContactsTest extends FunctionalTestCase
 
     /**
      * @test
+     *
+     * @group integration
      */
     public function it_can_update_an_existing_contact()
     {
@@ -96,6 +104,8 @@ class ContactsTest extends FunctionalTestCase
 
     /**
      * @test
+     *
+     * @group integration
      */
     public function it_can_delete_an_existing_contact()
     {
@@ -111,9 +121,17 @@ class ContactsTest extends FunctionalTestCase
 
     /**
      * @test
+     *
+     * @group integration
      */
     public function it_can_retrieve_all_contacts()
     {
+        $FIRST_NAME = $this->faker->firstName;
+        $LAST_NAME = $this->faker->lastName;
+
+        $contact = $this->client->contacts()->create(compact('FIRST_NAME', 'LAST_NAME'));
+        $this->contactId = Arr::get($contact, 'CONTACT_ID');
+
         $contacts = $this->client->contacts()->all();
 
         $this->assertNotEmpty($contacts);

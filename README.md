@@ -25,8 +25,20 @@ Coming Soon!
 
 ## Testing
 
+Test suite, include integration testing, and requires a valid API key for Insightly CRM.
+
+1. Create a FREE account at [Insightly CRM](https://www.insightly.com).
+2. Login and Goto `User Settings`.
+3. Copy your `API KEY`.
+
 ``` bash
-$ ./vendor/bin/phpunit
+$ INSIGHTLY_API_KEY=<API KEY> ./vendor/bin/phpunit
+```
+
+By default the tests will send live HTTP requests to the Inisghtly CRM API. If you are without internet connection you can skip these tests by excluding the `integration` group.
+
+```bash
+$ ./vendor/bin/phpunit --exclude-group integration
 ```
 
 ## Contributing

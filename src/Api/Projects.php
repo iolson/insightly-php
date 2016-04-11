@@ -40,7 +40,7 @@ class Projects extends Api
      */
     public function update($projectId, array $parameters = [])
     {
-        $parameters = Arr::add($parameters, 'CONTACT_ID', $projectId);
+        $parameters = Arr::add($parameters, 'PROJECT_ID', $projectId);
 
         return $this->putRequest("Projects", $parameters);
     }
